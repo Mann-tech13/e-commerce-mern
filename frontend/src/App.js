@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Register from "./components/Account/register"
 import Login from "./components/Account/login"
 import Home from "./components/Home/home"
+import Contact from "./components/Contact/contact"
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             }/>
           <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/register" element={<Register/>}/>
+          <Route exact path="/contact" element={<Contact/>}/>
         </Routes>
       </Router>
     </div>
