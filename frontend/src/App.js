@@ -7,15 +7,15 @@ import Contact from "./components/Contact/contact"
 import './App.css';
 
 function App() {
-  const [ loginUser, setLoginUser] = useState({})
+  const [ user, setLoginUser] = useState({})
   return (
     <div>
       <Router>
         <Routes>
           <Route exact path="/" element={
-              loginUser && loginUser._id ? <Home setLoginUser={loginUser}/> : <Login setLoginUser={setLoginUser}/>
+              user && user._id ? <Home setLoginUser={setLoginUser}/> : <Login setLoginUser={setLoginUser}/>
             }/>
-          <Route exact path="/login" element={<Login/>}/>
+          <Route exact path="/login" element={<Login setLoginUser={setLoginUser}/>}/>
           <Route exact path="/register" element={<Register/>}/>
           <Route exact path="/contact" element={<Contact/>}/>
         </Routes>

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+.connectus{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 5%;
+    color: #2e27be;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    
+}
+.name,.email,.reason{
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #e8e4e4;
+}
+
+.contact-svg{
+    width: 30%;
+}
+
+.submit_div{
+    text-align: center;
+    margin-top: 8%;
+}
+.submit{
+    width: 150px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6c63ff;
+    color: #ffffff;
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;   
+}
+.submit:hover{
+    /* background-color: rgb(9, 9, 60); */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
