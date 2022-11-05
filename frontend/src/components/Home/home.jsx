@@ -1,27 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Navigation from "../navigation/navigation"
 import axios from "axios"
+import "./home.css"
 
-function home({ setLoginUser }) {
+function Home({ setLoginUser }) {
+  const [searchedProduct, setSearchedProduct] = useState("")
+  const [value, setValue] = useState("")
+  const [data, setData] = useState([])
 
-  const options = {
-    method: 'GET',
-    url: 'https://real-time-product-search.p.rapidapi.com/search',
-    params: {q: 'iPhone', country: 'us', language: 'en'},
-    headers: {
-      'X-RapidAPI-Key': '5182f24adcmsh95a5bfed385303dp104125jsnd9ca2b9a7921',
-      'X-RapidAPI-Host': 'real-time-product-search.p.rapidapi.com'
+  const url = `https://fakeapi.com/products/${searchedProduct}`
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/${searchedProduct}`)
+      .then(res => res.json())
+      .then(json => setData(json))
+
+  }, [url])
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
+  }
+
+  const handleClick = (e) => {
+    if(value == ""){
+      setSearchedProduct("")
     }
-  };
-
-  axios.request(options).then(function (response) {
-    console.log(response.data);
-  }).catch(function (error) {
-    console.error(error);
-  });
+    else{
+      setSearchedProduct("category/" + value)
+    }
+  }
 
   return (
-    <div>home</div>
+    <div>
+      <Navigation />
+      <div className='search-div'>
+        <input type="text" className="search-area" onChange={handleChange} />
+        <input type="submit" className="search-btn" value="🔎" onClick={handleClick} />
+      </div>
+      <div className="product_div">
+        {
+          data.map((value) => {
+            return (
+
+              <div className="product">
+                <img key={value.id} src={value.image} alt="" className="product_images" />
+                <div className="rating">Rating: {value.rating.rate}/5</div>
+                <h3><div className="title">{value.title}</div></h3>
+                <hr />
+                <div className="price">Price: ${value.price}</div>
+                </div>
+            )
+          })
+        }
+      </div>
+    </div>
   )
 }
 
-export default home
+export default Home

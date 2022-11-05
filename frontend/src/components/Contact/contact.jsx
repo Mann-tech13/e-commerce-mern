@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import "./contact.css"
 import Contact_Image from "../../images/contact_svg.svg"
+import Navigation from "../navigation/navigation"
+import "./contact.css"
 
 function Contact() {
   let navigate = useNavigate()
@@ -35,6 +36,7 @@ function Contact() {
   }
   return (
     <div className="">
+      <Navigation/>
       <div className="connectus">Lets get Connected</div>
       <div className="container">
         {/* {console.log(contactUser)} */}

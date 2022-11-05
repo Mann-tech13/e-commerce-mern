@@ -1,0 +1,41 @@
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    /* margin-bottom: 5%; */
+    border-bottom: 1px solid #000000;
+    height: 7   0px;
+    width: 100%;
+    background-color: #0a0442;
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.whitemarket{
+    width: 12%;
+}
+
+.search-field {
+    width: 500px;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+}
+
+.home,
+.contact {
+    padding: 5%;
+    color: #ffffff;
+}
+
+.home:hover,
+.contact:hover{
+    border-bottom: 1px solid #ffffff;
+}
