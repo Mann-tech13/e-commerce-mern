@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const account_database = require("./database/account")
 const contact_database = require("./database/contact")
+require('dotenv').config()
 
 const app = express()
 app.use(express.json())
@@ -13,6 +14,6 @@ app.use(contact_database)
 
 
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
     console.log("BE started at port 8000")
 })
