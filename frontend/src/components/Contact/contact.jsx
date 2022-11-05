@@ -23,7 +23,7 @@ function Contact() {
   const contactDetails = () => {
     const { name, email, reason } = contactUser
     if (name || email || reason) {
-      axios.post("http://my-e-commerce-mern.herokuapp.com/contact", contactUser)
+      axios.post("http://localhost:8000/contact", contactUser)
         .then(res => {
           alert(res.data.message)
           navigate("/contact")
