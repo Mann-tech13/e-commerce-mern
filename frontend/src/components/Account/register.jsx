@@ -21,7 +21,7 @@ function Register() {
     const registration = () => {
         const { name, email, password, reEnterPassword } = user
         if (name && email && password && (password === reEnterPassword)) {
-            axios.post("http://localhost:8000/register", user)
+            axios.post("http://my-e-commerce-mern.herokuapp.com/register", user)
                 .then(res => {
                     alert(res.data.message)
                     navigate("/login")

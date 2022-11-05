@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const database = express()
 
-mongoose.connect('mongodb://localhost:27017/registerId', {
+mongoose.connect('mongodb+srv://mann:testmypassword@mern.2i5oimx.mongodb.net/registerId?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, () => {
