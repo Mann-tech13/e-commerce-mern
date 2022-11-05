@@ -1,28 +1,26 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import MarketLogo from '../../images/marketLogo.png'
 import "./navigation.css"
 
-function navigation() {
-  return (
-    <div className="nav-container">
-        {/* <div className="logo"> */}
+function Navigation() {
+    let navigate = useNavigate()
+    return (
+        <div className="nav-container">
+            {/* <div className="logo"> */}
             <img src={MarketLogo} className="whitemarket" alt="" />
-        {/* </div> */}
-        
-        <div className="nav-menu">
-            <div className="home">
-                Home
-            </div>
-            <div className="contact">
-                Contact
+            {/* </div> */}
+
+            <div className="nav-menu">
+                <div className="home" onClick={() => navigate("/home")}>
+                    Home
+                </div>
+                <div className="contact" onClick={() => navigate("/contact")}>
+                    Contact
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
-export default navigation
-
-{/* <div className="search">
-            <input type="text" placeholder="Search" className="search-field" />
-        </div> */}
+export default Navigation

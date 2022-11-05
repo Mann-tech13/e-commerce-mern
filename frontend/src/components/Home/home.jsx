@@ -33,7 +33,7 @@ function Home({ setLoginUser }) {
     <div>
       <Navigation />
       <div className='search-div'>
-        <input type="text" className="search-area" onChange={handleChange} />
+        <input type="text" className="search-area" placeholder="Search" onChange={handleChange} />
         <input type="submit" className="search-btn" value="🔎" onClick={handleClick} />
       </div>
       <div className="product_div">
